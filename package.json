@@ -1,0 +1,19 @@
+{
+  "name": "file-upload-services",
+  "version": "1.0.0",
+  "description": "Nodejs Application to Upload file",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myresumes/file-upload-server.git"
+  },
+  "author": "Prateek Kumar Srivastava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myresumes/file-upload-server/issues"
+  },
+  "homepage": "https://github.com/myresumes/file-upload-server#readme"
+}
