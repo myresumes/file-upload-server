@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/myresumes/file-upload-server/issues"
   },
-  "homepage": "https://github.com/myresumes/file-upload-server#readme"
+  "homepage": "https://github.com/myresumes/file-upload-server#readme",
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "nodemon": "^1.9.2",
+    "restify": "^4.1.1"
+  }
 }
