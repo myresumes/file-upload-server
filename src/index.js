@@ -1,25 +1,21 @@
 var restify = require("restify");
 var Promise = require('bluebird');
+var fs = require('fs');
 var server = restify.createServer({
     name: 'myapp',
     version: '1.0.0'
 });
-// server.use(function crossOrigin(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//     return next();
-// });
 
 server.use(restify.CORS({
 
-  // Defaults to ['*'].
-  origins: ['http://localhost:8081'], 
+    // Defaults to ['*'].
+    origins: ['http://localhost:8081'],
 
-  // Defaults to false.
-  credentials: true,
+    // Defaults to false.
+    credentials: true,
 
-  // Sets expose-headers.
-  headers: ['x-foo']   
+    // Sets expose-headers.
+    headers: ['x-foo']
 
 }));
 server.use(restify.acceptParser(server.acceptable));
@@ -33,7 +29,9 @@ server.listen(8080, function() {
 
 
 server.post('/api/upload-file', function create(req, res, next) {
-    res.send(201, req.body);
+    console.log('uploadFile: reqData body: ', req.files);
+     var read = fs.createReadStream(req.files.file.path);
+    res.send(201, req.files.file.path);
     return next();
 });
 
